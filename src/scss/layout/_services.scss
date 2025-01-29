@@ -30,8 +30,11 @@
   @include mq('min-w-xl') {
     row-gap: 0;
     flex-direction: row;
+    justify-content: space-between;
     flex-wrap: wrap;
-    align-items: baseline;
+    align-items: stretch;
+
+   
    
 
   }
@@ -45,9 +48,51 @@
     flex-direction: column;
     max-width: 360px;
 
+    &:nth-child(1) {
+       
+
+        @include mq('min-w-xl') {
+            img {
+           
+            }
+    
+            p {
+                margin-bottom: 35.92px;
+                
+            }
+        }
+    } 
+
+    &:nth-child(2) {
+       
+
+        @include mq('min-w-xl') {
+            img {
+                margin-bottom: 30px;
+            }
+    
+            p {
+                 margin-bottom: 34.92px;
+    
+            }
+        }
+    } 
+
+    &:nth-child(3) {
+       @include mq('min-w-xl') {
+        img {
+            margin-bottom: 47px;
+        }
+
+        p {
+        margin-bottom: 36px;
+
+        }
+       }
+    } 
+
     @include mq('min-w-xl') {
        align-items: flex-start
-       
       }
 
 
@@ -76,6 +121,16 @@
     line-height: 22.4px;
     text-align: center;
     margin-bottom: 32px;
+
+    @include mq('min-w-lg') {
+        text-align: start;
+       
+font-size: 16px;
+font-weight: 400;
+line-height: 22.4px;
+
+
+    }
   }
 
   &__btn {

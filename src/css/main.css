@@ -10,6 +10,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  touch-action: manipulation;
 }
 
 .container {
@@ -725,8 +726,9 @@ template {
   .services-list {
     row-gap: 0;
     flex-direction: row;
+    justify-content: space-between;
     flex-wrap: wrap;
-    align-items: baseline;
+    align-items: stretch;
   }
 }
 .services-list__item {
@@ -735,6 +737,27 @@ template {
   align-items: center;
   flex-direction: column;
   max-width: 360px;
+}
+@media screen and (min-width: 1200px) {
+  .services-list__item:nth-child(1) p {
+    margin-bottom: 35.92px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .services-list__item:nth-child(2) img {
+    margin-bottom: 30px;
+  }
+  .services-list__item:nth-child(2) p {
+    margin-bottom: 34.92px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .services-list__item:nth-child(3) img {
+    margin-bottom: 47px;
+  }
+  .services-list__item:nth-child(3) p {
+    margin-bottom: 36px;
+  }
 }
 @media screen and (min-width: 1200px) {
   .services-list__item {
@@ -763,6 +786,14 @@ template {
   text-align: center;
   margin-bottom: 32px;
 }
+@media screen and (min-width: 1024px) {
+  .services-list__text {
+    text-align: start;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22.4px;
+  }
+}
 .services-list__btn {
   width: 100%;
   background: rgb(210, 29, 5);
@@ -783,4 +814,121 @@ template {
 .services-list__btn:hover, .services-list__btn:focus {
   scale: 0.9;
   background: var(--hover-text-color);
+}
+
+.profit__container {
+  padding: 325px 21px 40px 21px;
+  background: linear-gradient(180deg, #d81e05 0%, #490900 100%);
+  position: relative;
+}
+.profit__img {
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 297px;
+  height: 297px;
+}
+.profit__text-card {
+  margin-bottom: 32px;
+  padding: 46px 35px 8.9px 33px;
+  background-image: url("/src/img/profit/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.profit__text-card p {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 22px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+.calculator__title {
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 48px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+.calculator__card {
+  margin-top: 19px;
+  background: rgb(255, 255, 255);
+  box-shadow: 0px 40px 127px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 15.41px 40.45px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 3.26px 10.35px 0px rgba(0, 0, 0, 0.03);
+  padding: 31px;
+  border-radius: 20px;
+  margin-bottom: 42px;
+}
+.calculator__box {
+  margin-bottom: 20px;
+}
+.calculator__result {
+  background: linear-gradient(90deg, #C91C04 0%, #D81E05 33.33%, #4B0900 66.67%, #4B0900 100%);
+  padding: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: rgb(255, 255, 255);
+  border-radius: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 14px;
+}
+.calculator__result span {
+  font-size: 36px;
+  line-height: 32px;
+}
+.calculator__text-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 16px;
+  margin-bottom: 40px;
+}
+.calculator__text-box:last-child {
+  margin-bottom: 0;
+}
+.calculator__text-box p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+.calculator__text-box span {
+  font-family: "Montserrat", sans-serif;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 56px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+.irs--round .irs-handle {
+  background: rgb(216, 30, 5) !important;
+  border-color: rgb(216, 30, 5) !important;
+}
+
+.irs--round .irs-bar {
+  background: rgb(216, 30, 5) !important;
+}
+
+.irs--round .irs-single {
+  background: rgb(216, 30, 5) !important;
+}
+
+.irs-single:before {
+  width: 6px !important;
+  height: 6px !important;
+  background: rgb(216, 30, 5) !important;
+  bottom: -6px !important;
+  left: 50% !important;
+  border: none !important;
 }/*# sourceMappingURL=main.css.map */
