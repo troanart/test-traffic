@@ -1,0 +1,62 @@
+@mixin mq($type) {
+    $mobile: 480px;
+    $tablet: 768px;
+    $mid-desktop: 1024px;
+    $desktop: 1200px;
+
+    @if $type == 'max-w-md' {
+        @media screen and (max-width: #{$tablet - 0.02px}) {
+            @content;
+        }
+    }
+
+    @if $type == 'min-w-sm' {
+        @media screen and (min-width: $mobile) {
+            @content;
+        }
+    }
+
+    @if $type == 'min-w-md' {
+        @media screen and (min-width: $tablet) {
+            @content;
+        }
+    }
+
+    @if $type == 'max-w-lg' {
+        @media screen and (min-width: $tablet) and (max-width: #{$mid-desktop - 0.02px}) {
+            @content;
+        }
+    }
+
+    @if $type == 'min-w-lg' {
+        @media screen and (min-width: $mid-desktop) {
+            @content;
+        }
+    }
+
+    @if $type == 'max-w-xl' {
+        @media screen and (min-width: $mid-desktop) and (max-width: #{$desktop - 0.02px}) {
+            @content;
+        }
+    }
+
+    @if $type == 'min-w-xl' {
+        @media screen and (min-width: $desktop) {
+            @content;
+        }
+    }
+
+    @if $type == 'not-desktop' {
+        @media screen and (max-width: #{$desktop - 0.02px}) {
+            @content;
+        }
+    }
+
+    @if $type == 'retina' {
+        @media (min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+            @content;
+        }
+    }
+}
