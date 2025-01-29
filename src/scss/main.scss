@@ -1,6 +1,12 @@
+@import './utils/variables';
 @import './common/common';
+
 @import './common/reset';
 @import './common/normolize';
 @import './utils/mixin';
 
+
 @import './layout/header';
+@import './layout/hero';
+@import './layout/special';
+@import './layout/services';

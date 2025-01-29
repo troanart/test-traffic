@@ -38,7 +38,7 @@
                     </li>
                 </ul>
                 <a href="#" class="nav__burger">
-                    <img src="./img/burger.svg" alt="">
+                    <img src="./img/burger.svg" alt="Menu">
                 </a>
             </nav>
 
@@ -52,28 +52,71 @@
                         Con il Gruppo Generali potete fare ancora di più!</h1>
                 </div>
                 <div class="hero__right">
+                    <div class="hero__gray-rictangle"></div>
                     <form class="form" action="">
                         <div class="form__group">
-                            <input type="text" placeholder="il suo nome">
-                            <input type="text" placeholder="il suo cog">
-                            <input type="mailto" placeholder="e-mail">
-                            <div class="form__group__tel">
-                                <select name="telefone" id="telefone">
-                                    <option value="">
-                                        <img src="./img/flag.svg" alt="">
-                                        <p>+353</p>
-                                    </option>
-                                </select>
-                                <input type="
+                            <input type="text" class="form__input" placeholder="il suo nome">
+                            <input type="text" class="form__input" placeholder="il suo cog">
+                            <input type="mailto" class="form__input" placeholder="e-mail">
+                            <div class="form__tel">
+                                <div class="form__custom-select" >
+                                   
+                                        <img src="./img/flag.svg" alt=""> +353
+                                   
+                                </div>
+                                <input class="form__input" placeholder="+39" type="
                             tel" >
                             </div>
-
                         </div>
-                        <button type="submit">
+                        <button class="form__btn" type="submit">
                             registrati
                         </button>
                     </form>
                 </div>
+            </div>
+        </section>
+        <section class="special">
+            <div class="container special__container">
+                <img class="special__decor" src="./img/gray-rectangle.png" alt="Decor">
+                <div class="special__text">
+                    <span>IL NOSTRO SCOPO</span>
+                <h5 class="special__title">
+                    Siamo qui per promuovere lo sviluppo e la circolazione delle persone, delle imprese e del Paese.
+                </h5>
+                </div>
+            </div>
+        </section>
+        <section class="services">
+            <div class="container services__container">
+                <h2 class="services__title">
+                    Inizia a servire con noi
+                </h2>
+                <ul class="list services-list">
+                    <li class="services-list__item">
+                        <img class="services-list__img" src="./img/service/service-list1.svg" alt="Icon">
+                        <h3 class="services-list__title">Registrazione</h3>
+                        <p class="services-list__text">Compilare tutti i campi del modulo di registrazione sul sito web.</p>
+                        <button type="button" class="services-list__btn">
+                            INIZIARE
+                        </button>
+                    </li>
+                    <li class="services-list__item">
+                        <img class="services-list__img" src="./img/service/service-list2.svg" alt="Icon">
+                        <h3 class="services-list__title">Consultazione di esperti</h3>
+                        <p class="services-list__text">Dopo la registrazione, rispondere all'invito del Consulente di supporto di Petrol Energia e seguire tutte le sue istruzioni.</p>
+                        <button type="button" class="services-list__btn">
+                            INIZIARE
+                        </button>
+                    </li>
+                    <li class="services-list__item">
+                        <img class="services-list__img" src="./img/service/service-list3.svg" alt="Icon">
+                        <h3 class="services-list__title">Deposito</h3>
+                        <p class="services-list__text">Dopo la verifica, è necessario depositare un minimo di 250 euro sul conto dell'azionista.</p>
+                        <button type="button" class="services-list__btn">
+                            INIZIARE
+                        </button>
+                    </li>
+                </ul>
             </div>
         </section>
     </main>

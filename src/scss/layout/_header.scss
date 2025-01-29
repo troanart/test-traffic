@@ -1,5 +1,5 @@
 .header {
-  margin-bottom: 28px;
+  margin-bottom:35px;
   position: sticky;
   top: 0;
   background-color: #fff;
@@ -63,15 +63,21 @@
     }
 
     &__item {
-     
       font-family: "Roboto";
       font-size: 20px;
       font-weight: 400;
       line-height: 36px;
+
+      &:hover, &:focus {
+        a {
+          color: var(--hover-text-color);
+        }
+      }
     }
 
     &__link {
       color: var(--title-color-text);
+      transition:  all ease-in-out 0.24s;
     }
   }
 
