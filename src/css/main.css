@@ -530,7 +530,7 @@ template {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("/src/img/hero/hero-baner.png");
+    background-image: url("src/img/hero/hero-baner.png");
     background-repeat: no-repeat;
     background-size: 55% 100%;
     background-position: right;
@@ -1005,7 +1005,7 @@ input:invalid {
 .profit__text-card {
   margin-bottom: 32px;
   padding: 46px 35px 8.9px 33px;
-  background-image: url("/src/img/profit/bg.jpg");
+  background-image: url("");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -1154,7 +1154,7 @@ input:invalid {
 }
 
 .feedback {
-  background-image: url("/src/img/feedbeack/bg.png");
+  background-image: url("src/img/feedbeack/bg.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
