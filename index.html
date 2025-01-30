@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <link rel="stylesheet" href="./css/main.min.css" />
+    <link rel="stylesheet" href="./src/css/main.min.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/css/intlTelInput.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
       rel="stylesheet" />
     <link
       rel="stylesheet"
@@ -26,7 +29,7 @@
           class="header__logo"
           rel="home"
           aria-label="На главную страницу">
-          <img src="./img/header/logo.svg" alt="Logo" />
+          <img src="./src/img/header/logo.svg" alt="Logo" />
         </a>
         <nav class="nav">
           <ul class="nav-list list">
@@ -42,9 +45,29 @@
               </a>
             </li>
           </ul>
-          <a href="#" class="nav__burger">
-            <img src="./img/header/burger.svg" alt="Menu" />
-          </a>
+          <a href="#"> </a>
+          <button type="button" class="nav__burger">
+            <img src="./src/img/header/burger.svg" alt="Menu" />
+          </button>
+          <div class="modal">
+            <button class="modal__close">X</button>
+            <div class="modal-content">
+              <!-- Кнопка для закрытия -->
+              <ul class="nav-list list">
+                <li class="nav-list__item">
+                  <a href="#" class="nav-list__link link"> Informazioni </a>
+                </li>
+                <li class="nav-list__item">
+                  <a href="#" class="nav-list__link link"> CEO </a>
+                </li>
+                <li class="nav-list__item">
+                  <a href="#" class="nav-list__link link">
+                    Iniziare a guadagnare subito
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </nav>
       </div>
     </header>
@@ -60,26 +83,30 @@
           </div>
           <div class="hero__right">
             <div class="hero__gray-rictangle"></div>
-            <form class="form" action="">
+            <form class="form" id="myForm" action="">
               <div class="form__group">
                 <input
                   type="text"
                   class="form__input"
-                  placeholder="il suo nome" />
+                  placeholder="il suo nome"
+                  id="name" />
                 <input
                   type="text"
                   class="form__input"
-                  placeholder="il suo cog" />
-                <input type="mailto" class="form__input" placeholder="e-mail" />
+                  placeholder="il suo cog"
+                  id="surname" />
+                <input
+                  type="email"
+                  class="form__input"
+                  placeholder="e-mail"
+                  id="email" />
+
                 <div class="form__tel">
-                  <div class="form__custom-select">
-                    <img src="./img/flag.svg" alt="" /> +353
-                  </div>
                   <input
+                    id="phone"
                     class="form__input"
-                    placeholder="+39"
-                    type="
-                            tel" />
+                    type="tel"
+                    placeholder="Phone" />
                 </div>
               </div>
               <button class="form__btn" type="submit">registrati</button>
@@ -91,7 +118,7 @@
         <div class="container special__container">
           <img
             class="special__decor"
-            src="./img/special/gray-rectangle.png"
+            src="./src/img/special/gray-rectangle.png"
             alt="Decor" />
           <div class="special__text">
             <span>IL NOSTRO SCOPO</span>
@@ -109,7 +136,7 @@
             <li class="services-list__item">
               <img
                 class="services-list__img"
-                src="./img/service/service-list1.svg"
+                src="./src/img/service/service-list1.svg"
                 alt="Icon" />
               <h3 class="services-list__title">Registrazione</h3>
               <p class="services-list__text">
@@ -121,7 +148,7 @@
             <li class="services-list__item">
               <img
                 class="services-list__img"
-                src="./img/service/service-list2.svg"
+                src="./src/img/service/service-list2.svg"
                 alt="Icon" />
               <h3 class="services-list__title">Consultazione di esperti</h3>
               <p class="services-list__text">
@@ -133,7 +160,7 @@
             <li class="services-list__item">
               <img
                 class="services-list__img"
-                src="./img/service/service-list3.svg"
+                src="./src/img/service/service-list3.svg"
                 alt="Icon" />
               <h3 class="services-list__title">Deposito</h3>
               <p class="services-list__text">
@@ -149,7 +176,7 @@
         <div class="container profit__container">
           <img
             class="profit__img"
-            src="./img/profit/decor.png"
+            src="./src/img/profit/decor.png"
             alt="Philippe Donnet" />
           <div class="profit__text-card">
             <p>
@@ -216,13 +243,13 @@
                   <div class="card__head">
                     <img
                       class="card__avatar"
-                      src="./img/feedbeack/ava1.png"
+                      src="./src/img/feedbeack/ava1.png"
                       alt="Avatar" />
                     <div class="card__bio">
                       <h3>Jeff Bezos:</h3>
                       <p>Technologieunternehmer, Investor und Philanthrop</p>
                       <img
-                        src="./img/feedbeack/facebook.svg"
+                        src="./src/img/feedbeack/facebook.svg"
                         alt="facebook icon" />
                     </div>
                   </div>
@@ -243,7 +270,7 @@
                   <div class="card__head">
                     <img
                       class="card__avatar"
-                      src="./img/feedbeack/ava2.png"
+                      src="./src/img/feedbeack/ava2.png"
                       alt="Avatar" />
                     <div class="card__bio">
                       <h3>Bill Gates:</h3>
@@ -252,7 +279,7 @@
                         Menschenfreund
                       </p>
                       <img
-                        src="./img/feedbeack/facebook.svg"
+                        src="./src/img/feedbeack/facebook.svg"
                         alt="facebook icon" />
                     </div>
                   </div>
@@ -275,7 +302,7 @@
                   <div class="card__head">
                     <img
                       class="card__avatar"
-                      src="./img/feedbeack/ava3.png"
+                      src="./src/img/feedbeack/ava3.png"
                       alt="Avatar" />
                     <div class="card__bio">
                       <h3>Bill Gates:</h3>
@@ -284,7 +311,7 @@
                         Menschenfreund
                       </p>
                       <img
-                        src="./img/feedbeack/facebook.svg"
+                        src="./src/img/feedbeack/facebook.svg"
                         alt="facebook icon" />
                     </div>
                   </div>
@@ -307,7 +334,7 @@
                   <div class="card__head">
                     <img
                       class="card__avatar"
-                      src="./img/feedbeack/ava4.png"
+                      src="./src/img/feedbeack/ava4.png"
                       alt="Avatar" />
                     <div class="card__bio">
                       <h3>Bill Gates:</h3>
@@ -316,7 +343,7 @@
                         Menschenfreund
                       </p>
                       <img
-                        src="./img/feedbeack/facebook.svg"
+                        src="./src/img/feedbeack/facebook.svg"
                         alt="facebook icon" />
                     </div>
                   </div>
@@ -339,7 +366,7 @@
                   <div class="card__head">
                     <img
                       class="card__avatar"
-                      src="./img/feedbeack/ava5.png"
+                      src="./src/img/feedbeack/ava5.png"
                       alt="Avatar" />
                     <div class="card__bio">
                       <h3>Bill Gates:</h3>
@@ -348,7 +375,7 @@
                         Menschenfreund
                       </p>
                       <img
-                        src="./img/feedbeack/facebook.svg"
+                        src="./src/img/feedbeack/facebook.svg"
                         alt="facebook icon" />
                     </div>
                   </div>
@@ -375,22 +402,22 @@
           <h2 class="partners__title">Gli azionisti dell'azienda</h2>
           <ul class="partners-list list">
             <li class="partners-list__item">
-              <img src="./img/partners/partners1.png" alt="Partner" />
+              <img src="./src/img/partners/partners1.png" alt="Partner" />
             </li>
             <li class="partners-list__item">
-              <img src="./img/partners/partners2.png" alt="Partner" />
+              <img src="./src/img/partners/partners2.png" alt="Partner" />
             </li>
             <li class="partners-list__item">
-              <img src="./img/partners/partners3.png" alt="Partner" />
+              <img src="./src/img/partners/partners3.png" alt="Partner" />
             </li>
             <li class="partners-list__item">
-              <img src="./img/partners/partners4.png" alt="Partner" />
+              <img src="./src/img/partners/partners4.png" alt="Partner" />
             </li>
             <li class="partners-list__item">
-              <img src="./img/partners/partners5.png" alt="Partner" />
+              <img src="./src/img/partners/partners5.png" alt="Partner" />
             </li>
             <li class="partners-list__item">
-              <img src="./img/partners/partners6.png" alt="Partner" />
+              <img src="./src/img/partners/partners6.png" alt="Partner" />
             </li>
           </ul>
         </div>
@@ -399,7 +426,7 @@
     <footer class="footer">
       <div class="conteainer footer__container">
         <a href="#" class="footer__logo">
-          <img src="./img/header/logo.svg" alt="Logo" />
+          <img src="./src/img/header/logo.svg" alt="Logo" />
         </a>
         <ul class="footer-list list">
           <li class="footer-list__item">
@@ -431,13 +458,13 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/ion-rangeslider@2.3.0/js/ion.rangeSlider.min.js"></script>
-    <script src="./js/index.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/25.2.1/build/js/intlTelInput.min.js"
       integrity="sha512-IkaM8IicdlJR0eLhPoAHBeDXxQ8QTjVfo7O9hwowr8gTmxZOlV0Z51HFYIDmftcLmdejUlGam6uYVU3k7xP/4A=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"></script>
-    <script src="./js/index.js"></script>
+    <script src="./src/js/index.js"></script>
   </body>
 </html>

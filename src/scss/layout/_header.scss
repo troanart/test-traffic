@@ -83,8 +83,99 @@
   }
 
   &__burger {
+    cursor: pointer;
+    display: block;
+    z-index: 11;
+    border: none;
+    background: none;
+
     @include mq("min-w-md") {
       display: none;
+    }
+
+    img {
+    }
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    &__close {
+      position: absolute;
+      z-index: 9999;
+      top: 2%;
+      right: 2%;
+      font-size: 22px;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      width: 250px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: -100%;
+      transition: left 0.3s ease;
+
+      .nav-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 20px;
+
+        &__item {
+          font-size: 24px;
+          font-weight: 500;
+          color: #333;
+          transition: color 0.3s ease;
+          text-align: center;
+
+          &:hover,
+          &:focus {
+            color: var(--hover-text-color);
+          }
+        }
+
+        &__link {
+          text-decoration: none;
+          color: #333;
+          transition: color 0.3s ease;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  &.active .modal {
+    display: block;
+    opacity: 1;
+  }
+
+  &.active .modal-content {
+    left: -4px;
+    padding: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .nav__burger {
+      display: block;
+    }
+
+    .modal.active {
+      display: block;
     }
   }
 }

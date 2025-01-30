@@ -1,7 +1,9 @@
 :root {
   --title-color-text: rgba(0, 0, 0, 1);
   --hover-text-color: rgb(202, 27, 27);
-  --primary-color:rgba(216, 30, 5, 1);
+  --primary-color: rgba(216, 30, 5, 1);
+  --white-color: rgba(255, 255, 255, 1);
+  --swiper-color: rgba(0, 6, 43, 1);
 }
 
 * {
@@ -436,9 +438,86 @@ template {
   color: var(--title-color-text);
   transition: all ease-in-out 0.24s;
 }
+.nav__burger {
+  cursor: pointer;
+  display: block;
+  z-index: 11;
+  border: none;
+  background: none;
+}
 @media screen and (min-width: 768px) {
   .nav__burger {
     display: none;
+  }
+}
+.nav .modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.nav .modal__close {
+  position: absolute;
+  z-index: 9999;
+  top: 2%;
+  right: 2%;
+  font-size: 22px;
+}
+.nav .modal .modal-content {
+  background-color: #fff;
+  width: 250px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  transition: left 0.3s ease;
+}
+.nav .modal .modal-content .nav-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+.nav .modal .modal-content .nav-list__item {
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+  transition: color 0.3s ease;
+  text-align: center;
+}
+.nav .modal .modal-content .nav-list__item:hover, .nav .modal .modal-content .nav-list__item:focus {
+  color: var(--hover-text-color);
+}
+.nav .modal .modal-content .nav-list__link {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+  text-align: center;
+}
+.nav.active .modal {
+  display: block;
+  opacity: 1;
+}
+.nav.active .modal-content {
+  left: -4px;
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  .nav .nav__burger {
+    display: block;
+  }
+  .nav .modal.active {
+    display: block;
   }
 }
 
@@ -563,25 +642,70 @@ template {
   text-transform: uppercase;
   color: rgb(129, 129, 129);
 }
-.form__tel {
+.form .form__tel {
   width: 100%;
 }
 @media screen and (min-width: 1024px) {
-  .form__tel {
+  .form .form__tel {
     position: relative;
     overflow: hidden;
   }
 }
-.form__tel input {
+.form .form__tel input {
   width: 100%;
+  padding-left: 40px;
+  height: 100%;
+  box-sizing: border-box;
 }
-.form__tel input::placeholder {
+.form .form__tel input::placeholder {
   text-align: start;
 }
 @media screen and (min-width: 1024px) {
-  .form__tel input::placeholder {
+  .form .form__tel input::placeholder {
     display: none;
   }
+}
+.form .iti {
+  width: 100%;
+}
+.form .iti .form__input {
+  width: 100%;
+}
+.form .iti__selected-country {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2px;
+  z-index: 1;
+}
+.form .iti__selected-country {
+  border: none;
+  background-color: rgb(217, 217, 217);
+  height: 100%;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  width: 68px;
+}
+.form .iti__a11y-text {
+  display: none;
+}
+.form .iti__country-name {
+  display: none;
+}
+.form .iti__arrow {
+  position: absolute;
+  top: 50%;
+  right: 3px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 2;
+}
+.form .iti__country-list {
+  width: 100%;
 }
 .form__custom-select {
   display: none;
@@ -625,13 +749,23 @@ template {
   letter-spacing: 1px;
   text-align: center;
   text-transform: uppercase;
-  color: rgb(255, 255, 255);
-  background-color: rgb(216, 30, 5);
+  color: var(--white-color);
+  background-color: var(--primary-color);
   transition: all ease-in-out 0.24s;
 }
 .form__btn:hover, .form__btn:focus {
   scale: 0.9;
   background-color: rgb(154, 22, 4);
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  display: none;
+}
+
+input:invalid {
+  border: 1px solid red;
 }
 
 .special__container {
@@ -819,7 +953,7 @@ template {
   font-weight: 400;
   line-height: 22px;
   text-align: center;
-  color: rgb(255, 255, 255);
+  color: var(--white-color);
   cursor: pointer;
   transition: all ease-in-out 0.24s;
   border: none;
@@ -889,7 +1023,7 @@ template {
   font-weight: 600;
   line-height: 22px;
   text-align: center;
-  color: rgb(255, 255, 255);
+  color: var(--white-color);
 }
 @media screen and (min-width: 1024px) {
   .profit__text-card p {
@@ -910,12 +1044,12 @@ template {
   font-weight: 700;
   line-height: 48px;
   text-align: center;
-  color: rgb(255, 255, 255);
+  color: var(--white-color);
 }
 .calculator__card {
   margin: 0 auto;
   margin-top: 19px;
-  background: rgb(255, 255, 255);
+  background: var(--white-color);
   box-shadow: 0px 40px 127px 0px rgba(0, 0, 0, 0.08);
   box-shadow: 0px 15.41px 40.45px 0px rgba(0, 0, 0, 0.05);
   box-shadow: 0px 3.26px 10.35px 0px rgba(0, 0, 0, 0.03);
@@ -948,7 +1082,7 @@ template {
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
-  color: rgb(255, 255, 255);
+  color: var(--white-color);
   border-radius: 38px;
   display: flex;
   justify-content: center;
@@ -986,7 +1120,7 @@ template {
   font-weight: 500;
   line-height: 20px;
   text-align: center;
-  color: rgb(255, 255, 255);
+  color: var(--white-color);
 }
 .calculator__text-box span {
   font-family: "Montserrat", sans-serif;
@@ -994,26 +1128,26 @@ template {
   font-weight: 500;
   line-height: 56px;
   text-align: center;
-  color: rgb(255, 255, 255);
+  color: var(--white-color);
 }
 
 .irs--round .irs-handle {
-  background: rgb(216, 30, 5) !important;
-  border-color: rgb(216, 30, 5) !important;
+  background: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
 }
 
 .irs--round .irs-bar {
-  background: rgb(216, 30, 5) !important;
+  background: var(--primary-color) !important;
 }
 
 .irs--round .irs-single {
-  background: rgb(216, 30, 5) !important;
+  background: var(--primary-color) !important;
 }
 
 .irs-single:before {
   width: 6px !important;
   height: 6px !important;
-  background: rgb(216, 30, 5) !important;
+  background: var(--primary-color) !important;
   bottom: -6px !important;
   left: 50% !important;
   border: none !important;
@@ -1036,7 +1170,7 @@ template {
 .mySwiper .card {
   max-width: 750px;
   margin: 0 auto;
-  background: rgb(255, 255, 255);
+  background: var(--white-color);
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   padding: 25px 24px 18px 36px;
@@ -1076,14 +1210,14 @@ template {
   font-size: 23.3px;
   font-weight: 500;
   line-height: 35px;
-  color: rgb(0, 6, 43);
+  color: var(--swiper-color);
   margin-bottom: 7px;
 }
 .mySwiper .card__bio p {
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
-  color: rgb(0, 6, 43);
+  color: var(--swiper-color);
   margin-bottom: 15px;
 }
 @media screen and (min-width: 1024px) {
